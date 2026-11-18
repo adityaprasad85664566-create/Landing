@@ -1,0 +1,11 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>M PARIVAHAN Admin</title><link rel="stylesheet" href="/admin.css"></head><body>
+<main class="wrap"><header><img src="/assets/m-parivahan-logo.png" alt=""><div><h1>M PARIVAHAN Admin</h1><p>Manage APK uploads</p></div></header>
+<div id="message" class="message" hidden></div>
+<section id="loginCard" class="card"><h2>Admin sign in</h2><form id="loginForm"><label>Admin password<input id="password" type="password" required autocomplete="current-password"></label><button>Sign in</button></form></section>
+<section id="panel" hidden>
+<div class="card"><h2>Upload a new APK</h2><p class="muted">The file uploads directly from your browser to Vercel Blob storage. The latest upload becomes the public download.</p>
+<form id="uploadForm"><label>APK file<input id="apk" type="file" accept=".apk,application/vnd.android.package-archive,application/octet-stream" required></label><label>Version (optional)<input id="version" maxlength="40" placeholder="e.g. 2.4.1"></label><label>Release notes (optional)<textarea id="notes" maxlength="1000" placeholder="What changed in this release?"></textarea></label><button id="uploadButton">Upload APK</button></form><div class="progress" id="progress" hidden><div id="progressBar"></div></div><p id="progressText" class="muted"></p></div>
+<div class="card"><div class="row"><h2>Uploaded APKs</h2><button id="logout" class="secondary">Sign out</button></div><div id="files" class="files"><p class="muted">Loading uploads…</p></div></div>
+</section>
+<p class="foot">Use this panel only to distribute APKs you own or are authorized to share. Keep the admin password private.</p></main>
+<script type="module" src="/src/admin.js"></script></body></html>
